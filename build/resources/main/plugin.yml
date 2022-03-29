@@ -1,0 +1,7 @@
+name: nMina
+version: 1.0.0
+main: me.drakiz.plugins.nminas.Main
+author: Drakiz
+commands:
+  mina:
+    aliases: ['minas', 'minerar', "mine", "mining"]

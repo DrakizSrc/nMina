@@ -1,0 +1,47 @@
+
+# Configurações do comando de teleporte
+Teleport:
+  Range: 10 # Blocos a partir do spawn do mundo
+  CountDown: 60 # Delay para usar o comando
+  CountDownMessage: "&b[nMinas] &eVocê deve esperar &a@countdown &esegundos antes de usar esse comando."
+  Permission: "nminas.teleport" # Permissão necessária para usar o comando
+  PermissionMessage: "&b[nMinas] &cVocê não tem permissão para usar esse comando."
+
+# Configurações do mundo de mineração
+Mining:
+  WelcomeMessage: # Deixe vazio para não mostrar mensagem de boas vindas
+    - ""
+    - "&b[nMinas] &eBem-vindo ao mundo de mineração!"
+    - "&b[nMinas] &eUse o comando &a/mina &epara acessar o mundo."
+    - ""
+
+  # Nome do mundo de mineração
+  WorldName: "mina"
+
+  # Defina os efeitos que serão aplicados ao jogador no mundo
+  Effects:
+    - "FAST_DIGGING, 3" # Efeito, Nível do efeito
+
+  # Defina as camadas onde os blocos serão gerados
+  Ores:
+    - "14:0, 20, 16" # ID do bloco, Nível da camada (Y) e Chance de gerar (%)
+    - "15:0, 58, 35"
+    - "16:0, 60, 40"
+    - "129:0, 12, 10"
+    - "56:0, 12, 9"
+    - "73:0, 10, 15"
+    - "21:0, 30, 15"
+
+  Rules:
+    DropStone: false # Se true, as pedras serão dropadas no mundo
+    Damage: false # Se true, jogadores irão sofrer dano no mundo
+    MobSpawn: true # Se true, mobs poderão nascer no mundo
+    Weather: false # Se true, o clima poderá mudar no mundo
+    Time: false # Se true, o tempo poderá mudar no mundo
+
+
+# Mensagens globais do plugin
+Messages:
+  AlreadyinMiningWorld: "&b[nMinas] &cVocê já está no mundo de mineração."
+  NotinMiningWorld: "&b[nMinas] &cVocê não está no mundo de mineração."
+  LeaveMiningWorld: "&b[nMinas] &eVocê saiu do mundo de mineração."
