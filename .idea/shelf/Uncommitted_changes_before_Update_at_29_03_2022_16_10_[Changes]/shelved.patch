@@ -1,0 +1,57 @@
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'java'\r\n}\r\n\r\ngroup 'me.drakiz'\r\nversion '1.0-SNAPSHOT'\r\n\r\nrepositories {\r\n    mavenCentral()\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision 27e7f1a3cb9594bc476e9d94786d6efaaa842796)
++++ b/build.gradle	(date 1648580542050)
+@@ -7,4 +7,26 @@
+ 
+ repositories {
+     mavenCentral()
+-}
+\ No newline at end of file
++}
++
++dependencies {
++    implementation files("C:\\Users\\troll\\Desktop\\Server\\spigot.jar")
++}
++
++jar {
++    baseName = project.name
++    version =  project.version
++}
++
++task copyJar(type: Copy) {
++    from jar // here it automatically reads jar file produced from jar task
++    into 'C:\\Users\\troll\\Desktop\\Server\\plugins'
++}
++
++tasks.withType(JavaCompile) {
++    options.encoding = 'UTF-8'
++}
++
++jar.finalizedBy(copyJar)
++
++
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.gradle\r\n**/build/\r\n!src/**/build/\r\n\r\n\r\nbuild.gradle\r\n# Ignore Gradle GUI config\r\ngradle-app.setting\r\n\r\n# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)\r\n!gradle-wrapper.jar\r\n\r\n# Avoid ignore Gradle wrappper properties\r\n!gradle-wrapper.properties\r\n\r\n# Cache of project\r\n.gradletasknamecache\r\n\r\n# Eclipse Gradle plugin generated files\r\n# Eclipse Core\r\n.project\r\n# JDT-specific (Eclipse Java Development Tools)\r\n.classpath
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+--- a/.idea/.gitignore	(revision 27e7f1a3cb9594bc476e9d94786d6efaaa842796)
++++ b/.idea/.gitignore	(date 1648580531593)
+@@ -1,5 +1,7 @@
+ .gradle
+ **/build/
++**/.idea/
++**/.gradle/
+ !src/**/build/
+ 
+ 

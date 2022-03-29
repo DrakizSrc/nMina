@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'me.drakiz'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation files("C:\\Users\\troll\\Desktop\\Server\\spigot.jar")
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
