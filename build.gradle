@@ -8,25 +8,3 @@ version '1.0-SNAPSHOT'
 repositories {
     mavenCentral()
 }
-
-dependencies {
-    implementation files("C:\\Users\\troll\\Desktop\\Server\\spigot.jar")
-}
-
-jar {
-    baseName = project.name
-    version =  project.version
-}
-
-task copyJar(type: Copy) {
-    from jar // here it automatically reads jar file produced from jar task
-    into 'C:\\Users\\troll\\Desktop\\Server\\plugins'
-}
-
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
-
-jar.finalizedBy(copyJar)
-
-
